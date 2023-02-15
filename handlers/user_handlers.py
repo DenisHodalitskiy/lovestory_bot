@@ -1,7 +1,7 @@
 import asyncio
 
 from aiogram import Dispatcher, Router
-from aiogram.types import Message, CallbackQuery, FSInputFile, ReplyKeyboardRemove
+from aiogram.types import Message, CallbackQuery, FSInputFile, ReplyKeyboardRemove, InputMediaPhoto
 from aiogram.filters import Command, Text
 
 from lexicon.lexicon_ru import LEXICON_RU
@@ -32,7 +32,7 @@ async def send_error_message(message: Message):
 async def send_second_q(message: Message):
     await message.answer_photo(photo=FSInputFile("photo/q1.png"), caption=LEXICON_RU['right_1_q'], 
                                 reply_markup=ReplyKeyboardRemove())
-    await asyncio.sleep(2)
+    await asyncio.sleep(3)
     await message.answer(text=LEXICON_RU['second_q'],
                         reply_markup=second_q_kb)
 
@@ -46,15 +46,15 @@ async def send_error_geography(message: Message):
 async def send_third_q(message: Message):
     await message.answer_photo(photo=FSInputFile("photo/q2.png"), caption=LEXICON_RU['right_2_q'],
                             reply_markup=ReplyKeyboardRemove())
-    await asyncio.sleep(2)
+    await asyncio.sleep(3)
     await message.answer(text=LEXICON_RU['russian_city_intro'])
-    await asyncio.sleep(2)
+    await asyncio.sleep(3)
     await message.answer_photo(photo=FSInputFile("photo/q2_piter.png"), caption=LEXICON_RU['q2_piter'])
-    await asyncio.sleep(1)
+    await asyncio.sleep(1.5)
     await message.answer_photo(photo=FSInputFile("photo/q2_nn.png"), caption=LEXICON_RU['q2_nn'])
-    await asyncio.sleep(1)
+    await asyncio.sleep(1.5)
     await message.answer_photo(photo=FSInputFile("photo/q2_kazan.png"), caption=LEXICON_RU['q2_kazan'])
-    await asyncio.sleep(1)
+    await asyncio.sleep(1.5)
     await message.answer_photo(photo=FSInputFile("photo/q2_sochi.png"), caption=LEXICON_RU['q2_sochi'])
     await asyncio.sleep(1.5)
     await message.answer(text=LEXICON_RU['third_q'],
@@ -84,9 +84,9 @@ async def send_love_you(message: Message):
 async def send_five_q(message: Message):
     await message.answer_photo(photo=FSInputFile("photo/q4.png"), caption=LEXICON_RU['right_4_q'],
                             reply_markup=ReplyKeyboardRemove())
-    await asyncio.sleep(2)
+    await asyncio.sleep(3)
     await message.answer_photo(photo=FSInputFile("photo/q4_klepa.png"), caption=LEXICON_RU['q4_klepa'])
-    await asyncio.sleep(2)
+    await asyncio.sleep(3)
     await message.answer(text=LEXICON_RU['five_q'],
                         reply_markup=five_q_kb)
 
@@ -95,7 +95,7 @@ async def send_five_q(message: Message):
 async def send_summary(message: Message):
     await message.answer_photo(photo=FSInputFile("photo/q5.png"), caption=LEXICON_RU['right_5_q'],
                             reply_markup=ReplyKeyboardRemove())
-    await asyncio.sleep(2)
+    await asyncio.sleep(5)
     await message.answer_photo(photo=FSInputFile("photo/q5_serious.png"), caption='Серьезной')
     await asyncio.sleep(2)
     await message.answer_photo(photo=FSInputFile("photo/q5_funny.png"), caption='Веселой')
@@ -107,19 +107,16 @@ async def send_summary(message: Message):
     await message.answer_photo(photo=FSInputFile("photo/q5_housy.png"), caption='Хозяйственной')
     await asyncio.sleep(2)
     await message.answer(text=LEXICON_RU['best_girl'])
-    await asyncio.sleep(1.5)
-    await message.answer_media_group(media=[FSInputFile("photo/q5_other.png"), FSInputFile("photo/q5_other_1.png"),
-                                        FSInputFile("photo/q5_other_2.png"), FSInputFile("photo/q5_other_3.png"),
-                                        FSInputFile("photo/q5_other_4.png"), FSInputFile("photo/q5_other_5.png"),
-                                        FSInputFile("photo/q5_other_6.png"), FSInputFile("photo/q5_other_7.png")])
+    await asyncio.sleep(3.5)
+    await message.answer_photo(photo=FSInputFile("photo/q5_other.png"), 
+                            caption=LEXICON_RU['other_but_sim'], 
+                            reply_markup=final_inline_kb)
+
+
+@router.callback_query(Text(text='final_task'))
+async def send_final_task(callback: CallbackQuery):
+    await callback.message.answer_photo(photo=FSInputFile("photo/win_photo.png"))
     await asyncio.sleep(1)
-    await message.answer(text=LEXICON_RU['other_but_sim'], reply_markup=final_inline_kb)
-
-
-@router.message(Text(text='final_task'))
-async def send_final_task(message: Message):
-    await message.answer_photo(photo=FSInputFile("photo/win_photo.png"))
-    await asyncio.sleep(0.5)
-    await message.answer(text=LEXICON_RU['final_text'])
+    await callback.message.answer(text=LEXICON_RU['final_text'])
 
 
