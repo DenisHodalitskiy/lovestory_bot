@@ -41,3 +41,18 @@ four_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(one_time_keyboard=True,
                                                             [KeyboardButton(text='Ивана барабана')],
                                                             [KeyboardButton(text='Все с тобой понятно, так и знала, что не любишь меня')]])
 
+##################################################
+
+five_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(one_time_keyboard=True,
+                                                    resize_keyboard=True,
+                                                    keyboard=[[KeyboardButton(text='Вариант 4 кажется правильным')],
+                                                            [KeyboardButton(text='Приглядись к варианту 1')],
+                                                            [KeyboardButton(text='Безгранично, бесконечно, безумно ...')],
+                                                            [KeyboardButton(text='Вариант 3')]])
+
+###################################################
+
+final_inline_kb: InlineKeyboardMarkup = InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(
+                                                                                text='Последнее задание (обещаю😅)',
+                                                                                callback_data='final_task'
+                                                                                )]])
