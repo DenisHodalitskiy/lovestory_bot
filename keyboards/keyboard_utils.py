@@ -7,8 +7,7 @@ start_inline_kb: InlineKeyboardMarkup = InlineKeyboardMarkup(inline_keyboard=[[I
 
 #################################################
 
-first_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(one_time_keyboard=True,
-                                                    resize_keyboard=True,
+first_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(resize_keyboard=True,
                                                     keyboard=[[KeyboardButton(text='1 июля')],
                                                             [KeyboardButton(text='12 июля')],
                                                             [KeyboardButton(text='19 июля')],
@@ -16,8 +15,7 @@ first_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(one_time_keyboard=True,
 
 #################################################
 
-second_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(one_time_keyboard=True,
-                                                    resize_keyboard=True,
+second_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(resize_keyboard=True,
                                                     keyboard=[[KeyboardButton(text='1 город')],
                                                             [KeyboardButton(text='2 города')],
                                                             [KeyboardButton(text='3 города')],
@@ -25,8 +23,7 @@ second_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(one_time_keyboard=True,
 
 ##################################################
 
-third_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(one_time_keyboard=True,
-                                                    resize_keyboard=True,
+third_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(resize_keyboard=True,
                                                     keyboard=[[KeyboardButton(text='На кругу')],
                                                             [KeyboardButton(text='Нас познакомил Иван')],
                                                             [KeyboardButton(text='Случайно встретились еще в Москве')],
@@ -34,8 +31,7 @@ third_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(one_time_keyboard=True,
 
 ##################################################
 
-four_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(one_time_keyboard=True,
-                                                    resize_keyboard=True,
+four_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(resize_keyboard=True,
                                                     keyboard=[[KeyboardButton(text='Конечно никого')],
                                                             [KeyboardButton(text='Клепу')],
                                                             [KeyboardButton(text='Ивана барабана')],
@@ -43,8 +39,7 @@ four_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(one_time_keyboard=True,
 
 ##################################################
 
-five_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(one_time_keyboard=True,
-                                                    resize_keyboard=True,
+five_q_kb: ReplyKeyboardMarkup = ReplyKeyboardMarkup(resize_keyboard=True,
                                                     keyboard=[[KeyboardButton(text='Вариант 4 кажется правильным')],
                                                             [KeyboardButton(text='Приглядись к варианту 1')],
                                                             [KeyboardButton(text='Безгранично, бесконечно, безумно ...')],
