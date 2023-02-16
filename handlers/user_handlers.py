@@ -115,7 +115,6 @@ async def send_summary(message: Message):
 
 @router.callback_query(Text(text='final_task'))
 async def send_final_task(callback: CallbackQuery):
-    await callback.message.answer_photo(photo=FSInputFile("photo/win_photo.png"))
     await asyncio.sleep(1)
     await callback.message.answer(text=LEXICON_RU['final_text'])
 
