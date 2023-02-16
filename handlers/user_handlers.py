@@ -117,5 +117,7 @@ async def send_summary(message: Message):
 async def send_final_task(callback: CallbackQuery):
     await asyncio.sleep(1)
     await callback.message.answer(text=LEXICON_RU['final_text'])
+    await asyncio.sleep(1)
+    await callback.message.answer(text=LEXICON_RU['final_love'])
 
 
